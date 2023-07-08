@@ -8,8 +8,13 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
+    <h1>
+      Etch A-Sketch
+    </h1>
     <div class="grid"></div>
     <div class="lowbar">
+      <button class="draw">Draw</button>
+      <input type="color" name="colorChange" id="colorChange">
       <div class="input">
         <input
           type="range"
@@ -22,8 +27,9 @@
         />
         <label for="pixels">pixels : 64</label>
       </div>
-      <button class="clean">clean</button>
-      <button class="color">Color</button>
+      <button class="clean">Eraser</button>
+      <p class="mode" style="color: aliceblue;">Drawing..</p>
     </div>
+    <footer>Copyright © vinayfreecs</footer>
   </body>
 </html>

@@ -1,7 +1,13 @@
 const grid = document.querySelector(".grid");
 const child = document.createElement("div");
+let mode = document.querySelector(".mode");
 let pixels = document.getElementById("pixels");
 let drawing = false;
+let colorChange = document.getElementById("colorChange");
+let color = "black";
+const draw = document.querySelector(".draw");
+console.log(draw);
+draw.addEventListener("click", etching);
 pixels.addEventListener("input", (event) => {
   pixels.value = event.target.value;
   let pixelValue = event.target.value;
@@ -9,26 +15,21 @@ pixels.addEventListener("input", (event) => {
   label.textContent = `pixels : ${event.target.value}`;
   etch(pixelValue);
 });
-function etch(pix = pixels.value) {
-  grid.querySelectorAll("*").forEach((kid) => {
-    kid.remove();
-  });
-  let flexBasisValue = 640 / pix;
-  child.style.flexBasis = `${flexBasisValue}px`;
-  for (let i = 0; i < pix * pix; i++) {
-    grid.appendChild(child.cloneNode(true));
-  }
+colorChange.addEventListener("input", () => {
+  color = colorChange.value;
+});
+function etching() {
+  mode.textContent = "Drawing..";
   const gridChildren = document.querySelectorAll(".grid div");
   grid.addEventListener("mousedown", () => {
     drawing = true;
-    console.log(drawing);
   });
   gridChildren.forEach((gridChild) => {
     gridChild.addEventListener(
       "mouseover",
       (e) => {
         if (drawing) {
-          e.target.style.backgroundColor = "red";
+          e.target.style.backgroundColor = color;
         }
       },
       false
@@ -38,8 +39,20 @@ function etch(pix = pixels.value) {
     drawing = false;
   });
 }
+function etch(pix = pixels.value) {
+  grid.querySelectorAll("*").forEach((kid) => {
+    kid.remove();
+  });
+  let flexBasisValue = 640 / pix;
+  child.style.flexBasis = `${flexBasisValue}px`;
+  for (let i = 0; i < pix * pix; i++) {
+    grid.appendChild(child.cloneNode(true));
+  }
+  etching();
+}
 const cleanButton = document.querySelector(".clean");
 cleanButton.addEventListener("click", () => {
+  mode.textContent = "Erasing..";
   grid.addEventListener("mousedown", () => {
     drawing = true;
   });
@@ -57,6 +70,8 @@ cleanButton.addEventListener("click", () => {
   });
   grid.addEventListener("mouseup", () => {
     drawing = false;
+    //cleanButton.style.backgroundColor = "rgba(84, 178, 228, 0.738)";
   });
 });
+
 etch();

@@ -1,5 +1,6 @@
 *{
     font-family: monaco,Consolas,Lucida Console,monospace;
+    font-weight: 700;
 }
 body{
     height: 100vh;
@@ -8,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 12px;
+    background-color: rgba(0, 0, 0, 0.89);
 }
 .lowbar{
     display: flex;
@@ -16,8 +18,20 @@ body{
 .input{
     display: flex;
     flex-direction: column;
+    color: aliceblue;
 }
 .clean{
+    background: none;
+    border: none;
+    background-color: rgba(84, 178, 228, 0.738);
+    border-radius: 16px;
+}
+.colorChange{
+    border: none;
+    text-decoration: none;
+    border-radius: 16px;
+}
+.draw{
     background: none;
     border: none;
     background-color: rgba(84, 178, 228, 0.738);
@@ -31,12 +45,14 @@ body{
     height: 640px;
     width: 640px;
     border: 2px solid blue;
+    background-color: rgb(212, 224, 235);
 }
 .grid div{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* .grid div:hover{
-    background-color: black;
-} */
+footer{
+    position: absolute;
+    bottom: 0;
+}
