@@ -1,0 +1,23 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 640px;
+    width: 640px;
+    border: 2px solid blue;
+}
+.grid div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .grid div:hover{
+    background-color: black;
+} */
