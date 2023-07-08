@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="grid" >
-
+    <div class="grid"></div>
+    <div class="lowbar">
+      <div class="input">
+        <input
+          type="range"
+          name="pixels"
+          id="pixels"
+          min="4"
+          max="100"
+          step="4"
+          value="64"
+        />
+        <label for="pixels">pixels : 64</label>
+      </div>
+      <button class="clean">clean</button>
+      <button class="color">Color</button>
     </div>
-    <input type="range" name="pixels" id="pixels" min="1" max="100" step="1" value="64">
-    <label for="pixels">pixels : 64</label>
   </body>
 </html>

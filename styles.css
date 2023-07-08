@@ -1,8 +1,27 @@
+*{
+    font-family: monaco,Consolas,Lucida Console,monospace;
+}
 body{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 12px;
+}
+.lowbar{
+    display: flex;
+    gap : 36px;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}
+.clean{
+    background: none;
+    border: none;
+    background-color: rgba(84, 178, 228, 0.738);
+    border-radius: 16px;
 }
 .grid{
     margin: 0;
